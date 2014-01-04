@@ -34,6 +34,7 @@
     "**/.*",
     "*.yml",
     "*.xml",
+    "example",
     "node_modules",
     "bower_components",
     "test",
