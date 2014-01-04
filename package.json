@@ -51,6 +51,7 @@
     "grunt-contrib-copy": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-ngmin": "0.0.3"
   }
 }
