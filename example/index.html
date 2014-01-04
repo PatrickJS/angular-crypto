@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Angular Crypto App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
+</head>
+<body ng-app="CryptoApp" style="500px auto">
+  <h1>Angular Crypto App</h1>
+  <section>
+    <h2>Encrypt</h2>
+    <select ng-model="encrypt.type">
+      <option value="md5">md5</option>
+      <option value="base64">base64</option>
+    </select>
+    <input ng-model="encrypt.input" placeholder="encryption"/>
+    <span ng-show="encrypt.input" ng-bind="encrypt.input"></span>
+  </section>
+  <section>
+    <h2>Decrypt</h2>
+    <select ng-model="decrypt.type">
+      <option value="md5">md5</option>
+      <option value="base64">base64</option>
+    </select>
+    <input ng-model="decrypt.input" placeholder="encryption"/>
+    <span ng-show="decrypt.input" ng-bind="decrypt.input"></span>
+
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.js"></script>
+  <script>
+    angular.module('CryptoApp', [])
+  </script>
+</body>
+</html>
