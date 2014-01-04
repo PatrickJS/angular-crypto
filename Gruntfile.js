@@ -44,7 +44,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          '<%= bwr.name %>.min.js': './*/*.js'
+          '<%= bwr.name %>.min.js': ['./lib/index.js', './lib/*/*.js', './lib/directives.js', './lib/filters.js']
         }
       },
       src: {
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
-          '<%= bwr.name %>.js': './*/*.js'
+          '<%= bwr.name %>.js': ['./lib/index.js', './lib/*/*.js', './lib/directives.js', './lib/filters.js']
         }
       }
     }
