@@ -11,29 +11,56 @@
 <body ng-app="CryptoApp" style="500px auto">
   <h1>Angular Crypto App</h1>
   <section>
-    <h2>Encrypt</h2>
-    <select ng-model="encrypt.type">
-      <option value="md5">md5</option>
-      <option value="base64">base64</option>
-    </select>
-    <input ng-model="encrypt.input" placeholder="encryption"/>
-    <span ng-show="encrypt.input" ng-bind="encrypt.input"></span>
+    <form ng-submit="">
+      <h2>Encrypt</h2>
+      <select ng-model="encrypt.type" ng-change="transform()">
+        <option value="md5">md5</option>
+        <option value="base64">base64</option>
+      </select>
+      <input ng-model="encrypt.input" placeholder="encryption"/>
+      <button>Encrypt</button>
+      <span ng-show="encrypt.input" ng-bind="encrypt.output"></span>
+    </form>
   </section>
   <section>
     <h2>Decrypt</h2>
-    <select ng-model="decrypt.type">
-      <option value="md5">md5</option>
-      <option value="base64">base64</option>
-    </select>
-    <input ng-model="decrypt.input" placeholder="encryption"/>
-    <span ng-show="decrypt.input" ng-bind="decrypt.input"></span>
+    <form ng-submit="">
+      <select ng-model="decrypt.type">
+        <option value="md5">md5</option>
+        <option value="base64">base64</option>
+      </select>
+      <input ng-model="decrypt.input" placeholder="encryption"/>
+      <button>Decrypt</button>
+      <span ng-show="decrypt.input" ng-bind="decrypt.output"></span>
+    </form>
 
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.js"></script>
+  <script src="../angular-crypto.js"></script>
   <script>
-    angular.module('CryptoApp', [])
+    angular.module('CryptoApp', [
+      'ngAnimate',
+      'gdi2290.crypto'
+    ])
+    .controller('MainController', function($scope, $crypto) {
+      $scope.types = $crypto.utils.types;
+
+      $scope.trasform = function(type) {
+        return function() {
+
+        }
+      };
+
+      $scope.encrypt = {
+        type: 'md5'
+      };
+
+      $scope.decrypt = {
+        type: 'md5'
+      };
+
+    })
   </script>
 </body>
 </html>
