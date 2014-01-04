@@ -21,9 +21,12 @@ module.exports = function (grunt) {
     },
     uglify: {
       options: {
+        report: 'min',
         enclose: {
           'this': 'window',
-          'this.angular': 'angular'
+          'this.angular': 'angular',
+          'this.Math': 'Math'
+          // '': 'undefined'
         },
         banner: '/*\n  <%= pkg.name %> - v<%= pkg.version %> \n  ' +
           '<%= grunt.template.today("yyyy-mm-dd") %>\n*/\n'+
@@ -32,7 +35,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           beautify: false,
-          mangle: true,
+          mangle: false,
           compress: {
             global_defs: {
               'DEBUG': false
@@ -46,7 +49,7 @@ module.exports = function (grunt) {
       },
       src: {
         options: {
-          beautify: false,
+          beautify: true,
           mangle: false,
           compress: false
         },
@@ -54,8 +57,7 @@ module.exports = function (grunt) {
           '<%= bwr.name %>.js': './*/*.js'
         }
       }
-    },
-
+    }
   });
 
 
