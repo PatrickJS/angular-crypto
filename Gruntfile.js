@@ -16,6 +16,9 @@ module.exports = function (grunt) {
     concat: {
       dist:{}
     },
+    ngmin: {
+      dist: {}
+    },
     uglify: {
       options: {
         enclose: {
@@ -61,6 +64,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'concat',
+    'ngmin',
     'uglify'
   ]);
 
