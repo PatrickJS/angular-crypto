@@ -25,8 +25,8 @@ module.exports = function (grunt) {
         enclose: {
           'this': 'window',
           'this.angular': 'angular',
-          'this.Math': 'Math'
-          // '': 'undefined'
+          'this.Math': 'Math',
+          'void 0': 'undefined'
         },
         banner: '/*\n  <%= pkg.name %> - v<%= pkg.version %> \n  ' +
           '<%= grunt.template.today("yyyy-mm-dd") %>\n*/\n'+
