@@ -35,13 +35,14 @@ module.exports = function (grunt) {
       dist: {
         options: {
           beautify: false,
-          mangle: false,
+          mangle: false, // true of ngmin
           compress: {
             global_defs: {
               'DEBUG': false
             },
             dead_code: true
-          }
+          },
+          sourceMap: '<%= bwr.name %>.min.js.map'
         },
         files: {
           '<%= bwr.name %>.min.js': ['./lib/index.js', './lib/*/*.js', './lib/directives.js', './lib/filters.js']
