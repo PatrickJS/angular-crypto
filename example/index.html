@@ -41,7 +41,7 @@
   <script>
     angular.module('CryptoApp', [
       'ngAnimate',
-      'gdi2290.crypto'
+      'gdi2290.crypto' // you can also use 'ngCrypto' or 'angular-crypto'
     ])
     .controller('MainController', function($scope, $crypto) {
       $scope.types = $crypto.utils.types;
