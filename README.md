@@ -6,3 +6,17 @@ angular-crypto provides standard and secure cryptographic algorithms for Angular
 
 ### work in progress
 Email me if something is broken.
+* MD5 - Encrypt only
+* SHA-1 - wip
+* SHA-256 - wip
+* RC4 - wip
+* Rabbit - wip
+* AES - wip
+* DES - wip
+* PBKDF2 - wip
+* HMAC - wip
+* OFB - wip
+* CFB - wip
+* CTR - wip
+* CBC - wip
+* Base64 - Done
